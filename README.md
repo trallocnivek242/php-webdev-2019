@@ -1,21 +1,21 @@
 # PHP WebDev 2019
 
-La théorie du cours de PHP pour les étudiants en première année du **BES Web developer**
+Théorie du cours de PHP pour les étudiants en première année du **BES Web developer**
 
 ## PDO
 
 PDO (PHP Data Objects) est une extension officielle du language PHP. Il s'agit d'une interface d'accès à une base de données et c'est la façon recommandée de communiquer avec une base de données depuis la version 5.1 de PHP (La dernière version stable de en mars 2019 est la version 7.3).
 
-PDO permet d'abstraire l'accès aux données. En d'autres termes, vous devez l'utiliser de la même façon quelque soit le type de base de donnée à laquelle vous vous connectez.
+PDO permet d'abstraire l'accès aux données. En d'autres termes, vous devez l'utiliser de la même façon quelque soit le type de base de données auquel vous vous connectez.
 
 Dans le cadre de ce cours nous connecterons PDO à une base de donnée MySQL (comme vu précédemment au cours de SGBD).
 
-### Connection de PDO
+### Connexion de PDO
 
-PDO est un Objet... Notion que vous ne verrez pas dans ce cours... Lorsque l'on se connecte à PDO, on crée une **variable** qui est une **Instance de l'objet PDO**.
+PDO est un Objet... Notion que vous ne verrez pas ici... Lorsqu'on se connecte à PDO, on crée une **variable** qui est une **Instance de l'objet PDO**.
 
-Une connection a PDO ne doit être effectuée qu'une seule fois dans un script, même si celui-ci effectue plusieurs appels vers la base de données. (autrement plusieurs instances de connexion vont être créées et ralentir votre serveur de base de données.)
-L'exemple le plus simple de connection à PDO est le suivant :
+La connexion à PDO ne doit être effectuée qu'une seule fois dans un script, même si celui-ci effectue plusieurs appels vers la base de données. (Sinon plusieurs instances de connexion vont être créées et ralentir votre serveur de base de données.)
+L'exemple le plus simple de connexion à PDO est le suivant :
 
 ```php
 <?php
@@ -25,9 +25,9 @@ $pdo = new PDO('mysql:host=localhost;dbname=test;port=3306', $user, $pass);
 ?>
 ```
 
-Où l'on spécifie les données spécifiques de connection à la base de donnée (_host_, _DB name_ et _port_), ainsi que le nom d'utilisateur et le mot de passe.
+Où l'on spécifie les données particulières de connexion à la base de donnée (_host_, _DB name_ et _port_), ainsi que le nom d'utilisateur et le mot de passe.
 
-Cependant, cette manière de faire n'est pas recommandée, parce que en cas d'erreur (serveur de base de données temporairement inaccessible par example), PHP va envoyer un message d'erreur à l'utilisateur qui contiendra notamment le nom d'utilisateur et le mot de passe de la BdD !
+Cependant, cette manière de faire n'est pas recommandée, parce qu'en cas d'erreur (serveur de base de données temporairement inaccessible par exemple), PHP va envoyer un message d'erreur à l'utilisateur qui contiendra notamment le nom d'utilisateur et le mot de passe de la BdD !
 
 C'est pourquoi lors de votre connexion à la DB vous devez capturer les erreurs grâce à un bloc de code **Try - Catch** tel que montré ci-dessous.
 
@@ -38,7 +38,7 @@ $pass = "";
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=test;port=3306', $user, $pass);
 } catch (PDOException $e) {
-    print "<p>Erreur de connection !</p>";
+    print "<p>Erreur de connexion !</p>";
     exit();
 }
 ?>
