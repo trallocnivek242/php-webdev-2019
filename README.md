@@ -4,7 +4,7 @@ La théorie du cours de PHP pour les étudiants en première année du **BES Web
 
 ## PDO
 
-PDO (PHP Data Objects) est une extension officielle du language PHP. Il s'agit d'une interface d'accès à une base de données et est la façon recommandée de communiquer avec une base de données depuis la version 5.1 de PHP (La dernière version stable de en mars 2019 est la version 7.3).
+PDO (PHP Data Objects) est une extension officielle du language PHP. Il s'agit d'une interface d'accès à une base de données et c'est la façon recommandée de communiquer avec une base de données depuis la version 5.1 de PHP (La dernière version stable de en mars 2019 est la version 7.3).
 
 PDO permet d'abstraire l'accès aux données. En d'autres termes, vous devez l'utiliser de la même façon quelque soit le type de base de donnée à laquelle vous vous connectez.
 
